@@ -20,7 +20,7 @@ This is a sleek, animated, and responsive Apple-style product landing page built
 
 ## 📸 Preview
 
-![screenshot]() <!-- Replace with your own image if needed -->
+![screenshot](apple.png) <!-- Replace with your own image if needed -->
 
 ---
 
