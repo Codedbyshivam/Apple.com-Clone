@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.glitch {
+    font-size: 140px;
+    font-weight: bold;
+    position: relative;
+    color: white;
+    animation: glitch 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: white;
+    background: #000;
+    overflow: hidden;
+}
+
+.glitch::before {
+    left: -2px;
+    text-shadow: -2px 0 red;
+    animation: glitchTop 1s infinite linear;
+}
+
+.glitch::after {
+    left: 2px;
+    text-shadow: -2px 0 blue;
+    animation: glitchBottom 1s infinite linear;
+}
+
+@keyframes glitchTop {
+    0% {
+        clip-path: inset(0 0 80% 0);
+    }
+
+    50% {
+        clip-path: inset(40% 0 20% 0);
+    }
+
+    100% {
+        clip-path: inset(80% 0 0 0);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip-path: inset(80% 0 0 0);
+    }
+
+    50% {
+        clip-path: inset(60% 0 20% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 80% 0);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.fade-in {
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards 1.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    background: #0071e3;
+    color: white;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+    background: #005bb5;
+}

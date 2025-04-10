@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<nav class="apple-navbar">
+    <ul>
+        <li><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Apple Logo" class="apple-logo"></a></li>
+        <li><a href="404.html">Store</a></li>
+        <li><a href="404.html">Store</a></li>
+        <li><a href="404.html">Mac</a></li>
+        <li><a href="404.html">iPad</a></li>
+        <li><a href="404.html">iPhone</a></li>
+        <li><a href="404.html">Watch</a></li>
+        <li><a href="404.html">AirPods</a></li>
+        <li><a href="404.html">TV & Home</a></li>
+        <li><a href="404.html">Entertainment</a></li>
+        <li><a href="404.html">Accessories</a></li>
+        <li><a href="404.html">Support</a></li>
+        <li><a href="404.html"><i class="fa fa-search"></i></a></li>
+        <li><a href="404.html"><i class="fa fa-shopping-bag"></i></a></li>
+        <li class="more-menu">
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+        </li>
+        <div class="theme-toggle" title="Toggle Theme">
+            🌙
+        </div>
+
+    </ul>
+</nav>
+
+<body data-theme="dark">
+
+    <section class="iphone-hero">
+        <div class="hero-text">
+            <h1>iPhone 16 Pro</h1>
+            <p>Built for Apple Intelligence.</p>
+            <div class="buttons">
+                <a href="404.html" class="btn primary learn-more">Learn more</a>
+                <a href="404.html" class="btn outline buy">Buy</a>
+            </div>
+        </div>
+        <div class="pro-glow">PRO</div>
+    </section>
+
+
+    <div class="section-divider"></div>
+
+    <section class="iphone-info">
+        <div class="iphone-img">
+            <img src="https://www.apple.com/v/iphone-16-pro/f/images/overview/product-stories/design/ANIM/design_hero_endframe__f4saxkdyib2a_xlarge.jpg"
+                alt="iPhone Side View" />
+        </div>
+        <div class="info-text">
+            <h2>Advanced Design</h2>
+            <p>The iPhone 16 features a new aerospace-grade titanium finish, vibrant OLED display, and better
+                performance than ever.</p>
+            <div class="action-buttons">
+                <a href="404.html" class="btn primary learn-more">Learn more</a>
+                <a href="404.html" class="btn outline buy">Buy</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
+        // 🌗 Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+        }
+
+        themeToggle?.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        });
+
+        // 🎯 Smooth Scroll + Section Fade-In
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar fade in/out on scroll direction
+        let lastScroll = 0;
+        const navbar = document.querySelector('.apple-navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling Down
+                navbar.classList.add('nav-hidden');
+            } else {
+                // Scrolling Up
+                navbar.classList.remove('nav-hidden');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+
+        // Navbar fade in/out on scroll direction
+
+
+    </script>
+
+
+</body>
+<!-- Footer Start -->
+<footer class="apple-footer">
+    <div class="footer-top">
+        <p>
+            1. Trade-in values will vary based on the condition, year, and configuration of your eligible device. Not
+            all devices are eligible for credit.
+        </p>
+    </div>
+
+    <div class="footer-links">
+        <div class="footer-column">
+            <h4>Shop and Learn</h4>
+            <ul>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">iPad</a></li>
+                <li><a href="#">iPhone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">AirPods</a></li>
+                <li><a href="#">TV & Home</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Apple Music</a></li>
+                <li><a href="#">Apple TV+</a></li>
+                <li><a href="#">iCloud</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Apple Store</h4>
+            <ul>
+                <li><a href="#">Find a Store</a></li>
+                <li><a href="#">Genius Bar</a></li>
+                <li><a href="#">Today at Apple</a></li>
+                <li><a href="#">Order Status</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>For Business</h4>
+            <ul>
+                <li><a href="#">Apple and Business</a></li>
+                <li><a href="#">Shop for Business</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>About Apple</h4>
+            <ul>
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">Apple Leadership</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Ethics & Compliance</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact Apple</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>More ways to shop: <a href="#">Find an Apple Store</a> or <a href="#">other retailer</a> near you.</p>
+        <p class="legal">
+            © 2025 Apple Inc. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a> | <a
+                href="#">Legal</a> | <a href="#">Site Map</a>
+        </p>
+    </div>
+</footer>
+
+</html>
