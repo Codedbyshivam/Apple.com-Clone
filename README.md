@@ -28,4 +28,4 @@ This is a sleek, animated, and responsive Apple-style product landing page built
 
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/your-username/apple-style-landing.git
+   git clone https://github.com/Codedbyshivam/Apple.com-Clone
